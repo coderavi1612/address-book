@@ -13,8 +13,8 @@ export type AutosaveStatus = 'idle' | 'saving' | 'saved' | 'error';
  */
 export function useAutosave(block: AddressBlock | null, delay: number = 2000) {
   const [status, setStatus] = useState<AutosaveStatus>('idle');
-  const timerRef = useRef<NodeJS.Timeout>();
-  const savedTimerRef = useRef<NodeJS.Timeout>();
+  const timerRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const savedTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
   // Track what was last persisted to DB
   const persistedRef = useRef<{ names: string[]; address: string; mobile: string } | null>(null);
   // Track the block id to reset persisted ref on block switch

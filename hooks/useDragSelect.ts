@@ -19,7 +19,7 @@ interface SelectionBox {
 export function useDragSelect(
   blocks: AddressBlock[],
   gridConfig: GridConfig,
-  containerRef: React.RefObject<HTMLDivElement>,
+  containerRef: React.RefObject<HTMLDivElement | null>,
   onSelectionChange: (selectedIds: string[]) => void
 ) {
   const [dragState, setDragState] = useState<DragSelectState>({

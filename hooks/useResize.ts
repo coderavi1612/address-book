@@ -1,7 +1,7 @@
 import { useState, useCallback, MouseEvent } from 'react';
 import { useBlockStore } from '@/store/blockStore';
 import { updateBlock } from '@/app/actions/blocks';
-import { GridConfig } from '@/types/block';
+import { GridConfig, AddressBlock } from '@/types/block';
 
 /**
  * Calculate new dimensions after resize operation

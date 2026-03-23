@@ -4,7 +4,7 @@ import { AddressBlock, GridConfig } from '@/types/block';
 interface VirtualizationOptions {
   blocks: AddressBlock[];
   gridConfig: GridConfig;
-  containerRef: React.RefObject<HTMLElement>;
+  containerRef: React.RefObject<HTMLElement | null>;
   visiblePageBuffer?: number;
 }
 
@@ -27,7 +27,7 @@ export function useVirtualization({
 }: VirtualizationOptions): VirtualizationResult {
   const [scrollTop, setScrollTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | undefined>(undefined);
 
   // Track scroll position and container height
   useEffect(() => {

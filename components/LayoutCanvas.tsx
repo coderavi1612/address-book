@@ -32,7 +32,7 @@ const CanvasContent = memo(function CanvasContent({
 }: { 
   gridConfig: ReturnType<typeof calculateGridConfig>;
   showGrid: boolean;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
   onAddBlock?: () => void;
   matchIds?: string[];
   activeMatchId?: string | null;
